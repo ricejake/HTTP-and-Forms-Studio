@@ -4,8 +4,16 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-
-
+		let actions = {
+			"google": "https://google.com/search",
+			"duckDuckGo": "https://duckDuckGo.com/search",
+			"bing": "https://bing.com/search",
+			"ask": "https://ask.com/web"
+		}
+		function setSearchEngine() {
+			const form document.getElementById('searchForm');
+			console.log("Hello");
+		}
     window.addEventListener("load", function(){
         // TODO: register the handler
 
@@ -19,10 +27,10 @@
 	<form id="searchForm">
     <!-- TODO: add form elements -->
 		<input name = "q" />
-		<label><input type = "radio" name = "engine" for = "google" value = "google" /></label>
-		<label><input type = "radio" name = "engine" value = "duckDuckGo" /></label>
-		<label><input type = "radio" name = "engine" value = "bing" /></label>
-		<label><input type = "radio" name = "engine" value = "ask" /></label>
+		<label for = "google"> Google<input type = "radio" name = "engine" for = "google" value = "google" /></label>
+		<label for = "duckDuckGo"> duckDuckGo<input type = "radio" name = "engine" value = "duckDuckGo" /></label>
+		<label for = "bing"> Bing<input type = "radio" name = "engine" value = "bing" /></label>
+		<label for = "ask"> Ask<input type = "radio" name = "engine" value = "ask" /></label>
 		<button>Go!</button>
 
 	</form>
