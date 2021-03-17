@@ -4,19 +4,25 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-		let actions = {
-			"google": "https://google.com/search",
-			"duckDuckGo": "https://duckDuckGo.com/search",
-			"bing": "https://bing.com/search",
-			"ask": "https://ask.com/web"
-		}
 		function setSearchEngine() {
-			const form document.getElementById('searchForm');
-			console.log("Hello");
+
+			let actions = {
+				"google": "https://google.com/search",
+				"duckDuckGo": "https://duckDuckGo.com/search",
+				"bing": "https://bing.com/search",
+				"ask": "https://ask.com/web"
+			}
+
+			const form = document.getElementById('searchForm');
+			const selectedEngine = document.querySelector('input[name=engine]:checked');
+			const action = actions[selectedEngine.value]
+			form.setAttribute('action', action)
+
 		}
     window.addEventListener("load", function(){
         // TODO: register the handler
-
+		const form document.getElementById('searchForm');
+		form.addEventListener('submit', setSearchEngine)
 
     });
 	</script>
